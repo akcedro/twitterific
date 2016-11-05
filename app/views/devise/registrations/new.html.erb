@@ -1,18 +1,17 @@
 <div class="container-fluid">
- <div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
-  <h2 class="text-center">Sign up</h2>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offet-4">
+      <h2 class="text-center">Sign up</h2>
 
-
-     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
         <div class="field form-group">
-         <%= f.label :name %><br>
-         <%= f.text_field :name,
-                          autofocus: true,
-                          placeholder: "First and Last Name",
-                          class: 'form-control' %>
+          <%= f.label :name %><br>
+          <%= f.text_field :name,
+                           autofocus: true,
+                           placeholder: "First and Last Name",
+                           class: 'form-control' %>
         </div>
 
         <div class="field form-group">
@@ -23,26 +22,25 @@
         </div>
 
         <div class="field form-group">
-          <%= f.label :username %> <br>
+          <%= f.label :username %><br>
           <%= f.text_field :username,
                            placeholder: "@username",
                            class: 'form-control' %>
-          </div>
-
-        <div class= "field form-group">
-        <%= f.label :bio %> <br>
-        <%= f.text_field :bio,
-                         placeholder: "Your bio here.",
-                         class: 'form-control' %>
         </div>
 
-        <div class= "field form-group">
-        <%= f.label :location %><br>
-         <%= f.text_field :location,
-                          placeholder: "New Orleans, Louisiana",
-                          class: 'form-control' %>
+        <div class="field form-group">
+          <%= f.label :bio %><br>
+          <%= f.text_field :bio,
+                           placeholder: "Your bio here.",
+                           class: 'form-control' %>
         </div>
 
+        <div class="field form-group">
+          <%= f.label :location %><br>
+          <%= f.text_field :location,
+                           placeholder: "New Orleans, Louisiana",
+                           class: 'form-control' %>
+        </div>
 
         <div class="field form-group">
           <%= f.label :password %>
@@ -61,14 +59,12 @@
                                class: 'form-control' %>
         </div>
 
-        <div class="actions">
+        <div class="actions form-group">
           <%= f.submit "Sign up" %>
         </div>
       <% end %>
 
       <%= render "devise/shared/links" %>
-
+    </div>
   </div>
- </div>
 </div>
-
