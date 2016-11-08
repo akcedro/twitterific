@@ -1,2 +1,15 @@
-<h1>Tweets#show</h1>
-<p>Find me in app/views/tweets/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Message: </strong>
+  <%= @tweet.message %>
+</p>
+
+<p>
+  <strong>User: </strong>
+  <%= @tweet.user.username %>
+</p>
+
+<%= link_to 'Edit This Tweet', edit_tweet_path(@tweet) %>
+<br>
+<%= link_to 'See All The Tweets', tweets_path %>
