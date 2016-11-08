@@ -13,3 +13,5 @@
 <%= link_to 'Edit This Tweet', edit_tweet_path(@tweet) %>
 <br>
 <%= link_to 'See All The Tweets', tweets_path %>
+<br>
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-xs" %>
