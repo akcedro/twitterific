@@ -33,12 +33,6 @@ before_action :set_tweet, only: [:show, :edit, :update, :destroy]
     end
   end
 
-  private
-
-  def set_tweet
-    @tweet = Tweet.find(params[:id])
-  end
-
   def new
     @tweet = Tweet.new
   end
@@ -56,11 +50,14 @@ before_action :set_tweet, only: [:show, :edit, :update, :destroy]
     end
   end
 
-private
+  private
 
-def tweet_params
-  params.require(:tweet).permit(:message, :user_id)
-end
-  def _form
+  def set_tweet
+    @tweet = Tweet.find(params[:id])
   end
+
+  def tweet_params
+    params.require(:tweet).permit(:message, :user_id)
+  end
+
 end
