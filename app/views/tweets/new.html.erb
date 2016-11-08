@@ -1,36 +1,5 @@
 <h1>New Tweet</h1>
 
-<%= form_for(@tweet) do |f| %>
-  <!-- This part checks for errors -->
-  <% if @tweet.errors.any? %>
-     <div id="error_explanation">
-       <h2>
-         <%= pluralize(@tweet.errors.count, "error") %> prohibited this tweet from being saved:
-       </h2>
-
-       <ul>
-         <% @tweet.errors.full_messages.each do |error| %>
-           <li><%= error %></li>
-         <% end %>
-       </ul>
-
-     </div>
-  <% end %>
-  <!-- This is the form -->
-  <div class="field">
-    <%= f.hidden_field :user_id, value: current_user.id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :message %><br>
-    <%= f.text_field :message %>
-  </div>
-
-  <div class= "actions">
-    <%= f.submit %>
-  </div>
-
-<% end %>
-
+<%= render 'form' %>
 
 <%= link_to 'See All The Tweets Again, if you want too...', tweets_path %>
