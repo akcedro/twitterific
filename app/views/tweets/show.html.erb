@@ -10,6 +10,8 @@
   <%= @tweet.user.username %>
 </p>
 
+<%= render 'shared/likes' %>
+<br>
 <%= link_to 'Edit This Tweet', edit_tweet_path(@tweet) %>
 <br>
 <%= link_to 'See All The Tweets', tweets_path %>

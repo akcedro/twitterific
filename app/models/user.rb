@@ -13,6 +13,11 @@ class User < ApplicationRecord
 
          has_many :likes
 
+         def likes?(tweet)
+           tweet.likes.where(user_id: id).any?
+
+         end
+
   validates :username, presence: true
   validates :username, presence: true, uniqueness: true
 end
