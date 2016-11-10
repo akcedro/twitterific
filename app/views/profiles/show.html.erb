@@ -3,3 +3,6 @@
 <% @user.tweets.each do |tweet| %>
   <%= tweet.message %> <br>
 <% end %>
+
+<br>
+<%= link_to "Follow", relationships_path(friend_id: @user), method: :post, class: 'btn btn-info btn-xs' %>
