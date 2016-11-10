@@ -5,4 +5,12 @@
 <% end %>
 
 <br>
-<%= link_to "Follow", relationships_path(friend_id: @user), method: :post, class: 'btn btn-info btn-xs' %>
+
+<% unless current_user.id == @user.id %>
+  <% if current_user.friends.include?(@user) %>
+    <%= link_to "Unfollow", relationship_path(current_user.relationships.find_by_friend_id(@user)), method: :delete, class: 'btn btn-info btn-xs' %>
+  <% else  %>
+  <%= link_to "Follow", relationships_path(friend_id: @user), method: :post, class: 'btn btn-info btn-xs' %>
+  <% end %>
+
+<% end %>
