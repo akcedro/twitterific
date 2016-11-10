@@ -8,7 +8,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="container_fluid">
+  <body>
+  <%= link_to "Sign Out", destroy_user_session_path,
+                          method: :delete,
+                          class: 'btn btn-danger btn-xs' %>
     <%= yield %>
   </body>
 </html>
